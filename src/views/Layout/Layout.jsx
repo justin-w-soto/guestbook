@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const FormField = () => {
+export const Layout = () => {
     return (
         <div>
-            <h1>Forms</h1>
+            
         </div>
     )
 }
