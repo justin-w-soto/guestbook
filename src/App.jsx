@@ -7,12 +7,13 @@ import { Footer } from './components/Layout/Footer'
 
 export default function App() {
   return (
-    <>    
+    <> 
+       
     <Header />
     <Home />
     <GuestBook/>
-    <h1>Go Away</h1>;
     <Footer />
+
     </>
 
   )
