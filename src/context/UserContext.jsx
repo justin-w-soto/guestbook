@@ -1,11 +1,12 @@
+import React from 'react'
 import { useContext, createContext, useState }from 'react'
 
 export const UserContext = () => {
 
     const UserContext = createContext()
-    const UserProvider = () => {
-        const [something, setSomething] = useState('')
-        return <UserContext.Provider value='somestate'></UserContext.Provider>
+    const UserProvider = ({ children }) => {
+        const [user, setUser] = useState('')
+        return <UserContext.Provider value={{user, setUser}}>{ children }</UserContext.Provider>
     }
 }
 
@@ -14,9 +15,10 @@ export const UserContext = () => {
         const context = useContext(userContext)
         
         if (context === undefined) {
-            throw new error('useMyHook needs to be called inside of a UserContext Provider')
+            throw new Error('useMyHook needs to be called inside of a UserContext Provider')
         }
         return context
     }
 
    
+export { UserProvider, useMyHook }
