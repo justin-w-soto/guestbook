@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const Entry = () => {
+export const Entry = ({ entry: { name, message } }) => {
     return (
         <div>
-            <h3>Your name</h3>
-            <section>Your message</section>
+            <h3>{name}</h3>
+            <section>{message}</section>
         </div>
     )
 }
