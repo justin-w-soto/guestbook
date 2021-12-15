@@ -9,9 +9,14 @@ export const UserContext = () => {
     }
 }
 
-    return (
-        <div>
-            
-        </div>
-    )
+// MAKE A CUSTOM HOOK 
+    const useMyHook = () => {
+        const context = useContext(userContext)
+        
+        if (context === undefined) {
+            throw new error('useMyHook needs to be called inside of a UserContext Provider')
+        }
+        return context
+    }
 
+   
