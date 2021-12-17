@@ -5,33 +5,61 @@ import { useMyHook } from '../../context/UserContext'
 
 export const GuestBook = () => {
 const [name, setName] = useState('')
+const [guestEntry, setGuestEntry] = useState('')
+const { entries, setEntries } = useEntriesCustom()
+const { user, setUser } = useMyHook()
+
 
 const handleSubmit = (e) => {
     e.preventDefault()
     updateGuestName()
   }
 
+const updateName = () => {
+  if (!guestEntry) return 
+  setUser(name), setEntries([...entries, {  name, message: guestEntry }]), setGuestEntry('')
+}  
+
 const guestNameInput = (
+  
       <>
-        <label>Guest Name</label>
+        <label htmlFor="guestName">Guest Name</label>
     
         <input
             className="input"
             type="text"
-            placeholder="Guest Name..."
+            placeholder="Name..."
             value={name}
             onChange={(e) => setName(e.target.value)}
         />
       
     </>
   )
+
+const msg = user ? `Thanks for the note ${user}.` : 'Please Sign the Book!'
+
     return (
-        <form>
-            <label htmlFor='guestEntry'>Guest Entry</label>
-            <textarea  placeholder="Your Entry!"/>
-            <button className="button" type="submit">
-            Sign 
-          </button>
-        </form>
+
+      <>
+      <h1>{msg}</h1>
+      <form onSubmit={handleSubmit}>
+
+      {user ? null : guestNameInput}
+        <label htmlFor='guestEntry'>Guest Entry</label>
+        <textarea id="guestEntry" value={guestEntry} placeholder="Your Note!" onChange={(e) => setGuestEntry(e.target.value)} />
+        <button className="button" type="submit">
+          Sign
+        </button>
+        {user && (
+        <button 
+          type="button" 
+          className="signOut hover:text-red-400 transition-all" 
+          onClick={() => { setUser(''), setName('') }}
+          >Not {user} ?
+        </button>
+          )}
+
+      </form>
+      </>
     )
 }

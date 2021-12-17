@@ -17,9 +17,9 @@ import { useContext, createContext, useState }from 'react'
     const useMyHook = () => {
         const context = useContext(UserContext)
         
-        if (context === undefined) {
-            throw new Error('useMyHook needs to be called inside of a UserContext Provider')
-        }
+        // if (context === undefined) {
+        //     throw new Error('useMyHook needs to be called inside of a UserContext Provider')
+        // }
         return context
     }
 
