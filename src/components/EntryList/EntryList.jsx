@@ -8,10 +8,10 @@ const { entries } = useEntriesCustom()
     return (
         <div>
             <ul>
-                {entries.map((guestentry) => {
+                {entries.map((entry) => {
                     return (
-                    <li key={`${guestentry.name}-${guestentry.message}`}> 
-                        <Entry guestentry={guestentry}/>
+                    <li key={`${entry.name}-${entry.message}`}> 
+                        <Entry entry={entry}/>
                     </li>
                     )
                 })}

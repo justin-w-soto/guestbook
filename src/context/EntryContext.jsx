@@ -5,8 +5,14 @@ const EntryContext = createContext()
 
 const EntryProvider = ({ children }) => {
   const [entries, setEntries] = useState([])
-  return <EntryContext.Provider value={{ entries, setEntries }}>{children}</EntryContext.Provider>
-}
+  return (
+  
+  <EntryContext.Provider 
+  value={{ entries, setEntries }}
+  >
+    {children}
+  </EntryContext.Provider>
+  )}
 
 // MAKE ANOTHER CUSTOM HOOK
 const useEntriesCustom = () => {

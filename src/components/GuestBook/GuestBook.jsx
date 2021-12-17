@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import { useEntriesCustom } from '../../context/EntryContext'
+import { useMyHook } from '../../context/UserContext'
 
 export const GuestBook = () => {
 const [name, setName] = useState('')

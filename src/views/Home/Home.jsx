@@ -1,9 +1,13 @@
 import React from 'react'
+import { EntryList } from '../../components/EntryList/EntryList'
+import { GuestBook } from '../../components/GuestBook/GuestBook'
+import { EntryProvider } from '../../context/EntryContext'
 
 export const Home = () => {
     return (
-        <div>
-           <h2>Home View</h2>
-        </div>
+        <EntryProvider>
+        <GuestBook />
+        <EntryList />
+        </EntryProvider>
     )
 }
