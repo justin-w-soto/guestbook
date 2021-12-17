@@ -5,21 +5,15 @@ import { useContext, createContext, useState }from 'react'
 
     const UserProvider = ({ children }) => {
         const [user, setUser] = useState('')
-        return (
-        <UserContext.Provider 
-        value={{user, setUser}}
-        >
-            { children }
-        </UserContext.Provider>)
+        return (<UserContext.Provider value={{user, setUser}}>{ children }</UserContext.Provider>)
     }
 
-    // MAKE A CUSTOM HOOK 
     const useMyHook = () => {
         const context = useContext(UserContext)
         
-        // if (context === undefined) {
-        //     throw new Error('useMyHook needs to be called inside of a UserContext Provider')
-        // }
+        if (context === undefined) {
+            throw new Error('useMyHook needs to be called inside of UserContext Provider')
+        }
         return context
     }
 
