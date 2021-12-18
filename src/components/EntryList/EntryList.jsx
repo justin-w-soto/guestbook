@@ -1,9 +1,9 @@
 import React from 'react'
-import { useEntriesCustom } from '../../context/EntryContext'
+import { useEntries } from '../../context/EntryContext'
 import { Entry } from '../Entry/Entry'
 
 export const EntryList = () => {
-const { entries } = useEntriesCustom()
+const { entries } = useEntries()
 
     return (
         <div>

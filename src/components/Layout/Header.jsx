@@ -1,10 +1,17 @@
 import React from 'react'
+import { useMyHook } from '../../context/UserContext'
 
 export const Header = () => {
+    const { user } = useMyHook()
     return (
         <header style={{color: 'white', background: 'tomato', marginTop: '0', display:'flex', justifyContent: 'space-between' , paddingInline: '4rem'  } } className='header'>
-            <h2 >Logo</h2>
-            <h2> sign in friend </h2>
+            {user ? (
+        <p>
+          Signing Guestbook as {user}
+        </p>
+      ) : (
+        <p>Sign In Friend!</p>
+      )}
         </header>
     )
 }
