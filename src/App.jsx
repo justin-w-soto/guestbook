@@ -1,25 +1,21 @@
 import react from 'react'
-import { Header } from './components/Layout/Header'
-import { GuestBook } from './components/GuestBook/GuestBook'
-import { Footer } from './components/Layout/Footer'
-import { EntryProvider } from './context/EntryContext'
-
+import { UserProvider } from './context/UserContext'
+import { Home } from './views/Home/Home'
+import { Layout } from './views/Layout/Layout'
+ 
 
 export default function App() {
   return (
     <> 
-    <EntryProvider> 
-    <Header />
-    <GuestBook/>
-    <Footer />
-    </EntryProvider>
+    
+<UserProvider>
+      <Layout>
+        <Home />
+      </Layout>
+    </UserProvider>
 
     </>
 
   )
-  
- 
-  
 
-  
 }

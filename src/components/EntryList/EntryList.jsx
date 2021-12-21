@@ -10,9 +10,9 @@ const { entries } = useEntries()
             <ul>
                 {entries.map((entry) => {
                     return (
-                    <li key={`${entry.name}-${entry.message}`}> 
-                        <Entry entry={entry}/>
-                    </li>
+                        <li key={`${entry.name}-${entry.message}`}>
+                        <Entry entry={entry} />
+                      </li>
                     )
                 })}
             </ul>

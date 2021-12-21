@@ -7,7 +7,7 @@ export const GuestBook = () => {
 const [name, setName] = useState('')
 const [guestEntry, setGuestEntry] = useState('')
 const { entries, setEntries } = useEntries()
-const { user, setUser } = useMyHook()
+const { user, setUser } = useMyHook('user')
 
 
 const handleSubmit = (e) => {
@@ -57,6 +57,7 @@ const msg = user ? `Thanks for the note ${user}.` : 'Please Sign the Book!'
           >Not {user} ?
         </button>
           )}
+          
 
       </form>
       </>

@@ -5,9 +5,9 @@ import { EntryProvider } from '../../context/EntryContext'
 
 export const Home = () => {
     return (
-        <EntryProvider>
-        <GuestBook />
-        <EntryList />
-        </EntryProvider>
+    <EntryProvider>
+      <GuestBook />
+      <EntryList />
+    </EntryProvider>
     )
 }
