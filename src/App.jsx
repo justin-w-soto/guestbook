@@ -4,6 +4,7 @@ import { UserProvider } from './context/UserContext'
 import { Auth } from './views/Auth/Auth'
 import { Home } from './views/Home/Home'
 import { Layout } from './views/Layout/Layout'
+import { PrivateRoute } from './components/PrivateRoute/PrivateRoute'
  
 
 export default function App() {
@@ -16,9 +17,9 @@ export default function App() {
             <Route path="/login">
               <Auth />
             </Route>
-            <Route path="/">
+            <PrivateRoute path="/">
               <Home />  
-            </Route>
+            </PrivateRoute>
           </Switch>
         </Layout>
       </UserProvider>
