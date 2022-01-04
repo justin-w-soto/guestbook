@@ -46,10 +46,20 @@ const msg = user ? `Thanks for the note ${user}.` : 'Please Sign the Book!'
 
       {user ? null : guestNameInput}
         <label htmlFor='guestEntry'>Guest Entry</label>
-        <textarea id="guestEntry" value={guestEntry} placeholder="Your Note!" onChange={(e) => setGuestEntry(e.target.value)} />
-        <button className="button" type="submit">
+
+        <textarea 
+        id="guestEntry" 
+        value={guestEntry} 
+        placeholder="Your Note!" 
+        onChange={(e) => setGuestEntry(e.target.value)} 
+        />
+
+        <button 
+        className="button" 
+        type="submit">
           Sign
         </button>
+        
         {user && (
         <button 
           type="button" 
