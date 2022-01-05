@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { useLocation, useHistory, Link } from 'react-router-dom';
 import { useMyHook } from '../../context/UserContext'
 
