@@ -9,24 +9,20 @@ import { PrivateRoute } from './components/PrivateRoute/PrivateRoute'
 
 export default function App() {
   return (
-    <> 
-    <Router>
       <UserProvider>
-        <Layout>
-          <Switch>
-            <Route path="/login">
-              <Auth />
-            </Route>
-            <PrivateRoute path="/">
-              <Home />  
-            </PrivateRoute>
-          </Switch>
-        </Layout>
+        <Router>
+            <Layout>
+              <Switch>
+                <Route path="/login">
+                  <Auth />
+                </Route>
+                <PrivateRoute path="/">
+                  <Home />  
+                </PrivateRoute>
+              </Switch>
+            </Layout>
+        </Router>
       </UserProvider>
-    </Router>
-
-    </>
-
   )
 
 }

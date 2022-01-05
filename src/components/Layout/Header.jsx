@@ -4,13 +4,20 @@ import { useMyHook } from '../../context/UserContext'
 export const Header = () => {
     const { user } = useMyHook()
     return (
-        <header style={{color: 'white', background: 'tomato', marginTop: '0', display:'flex', justifyContent: 'space-between' , paddingInline: '4rem'  } } className='header'>
+        <header className='header'
+        style={{ 
+          background: '#091620', 
+          color: 'white', 
+          padding: '1rem', 
+          fontFamily:'sans-serif',
+         
+          }}>
             {user ? (
         <p>
           Signing Guestbook as {user}
         </p>
       ) : (
-        <p>Sign In Friend!</p>
+        <p style={{ fontSize: '4rem'}}>Sign In Friend!</p>
       )}
         </header>
     )

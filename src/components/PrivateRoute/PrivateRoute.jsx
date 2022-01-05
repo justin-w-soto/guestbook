@@ -5,7 +5,6 @@ import { useMyHook } from '../../context/UserContext'
 export const PrivateRoute = ({ children, ...rest }) => {
     const { user } = useMyHook();
     return (
-
         <>
         <h1>This is private time shhhhh!</h1> 
         <Route {...rest} render={( privateRouteProps ) => 
