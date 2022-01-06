@@ -3,20 +3,10 @@
 exports[`should render the guestbook view 1`] = `
 <div>
   <h1>
-    Please Sign the Book!
+    Sign the Book!
   </h1>
   <form>
-    <label
-      for="guestName"
-    >
-      Guest Name
-    </label>
-    <input
-      class="input"
-      placeholder="Name..."
-      type="text"
-      value=""
-    />
+    
     <label
       for="guestEntry"
     >

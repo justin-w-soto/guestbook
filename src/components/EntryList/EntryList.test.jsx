@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { EntryList } from "./EntryList";
 import { EntryProvider } from "../../context/EntryContext";
 
-it('should render the notes', ()=> {
+it('should render the notes', () => {
     const { container } = render(
     <EntryProvider>
         <EntryList />

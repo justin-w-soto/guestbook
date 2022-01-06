@@ -34,7 +34,7 @@ const msg = user ? `Thanks for the note ${user}.` : 'Sign the Book!'
       <>
         <h1>{msg}</h1>
         <form onSubmit={handleSubmit}>
-          {user ? null : guestNameInput}
+          {user ? null : guestEntry}
             <label htmlFor='guestEntry'>Guest Entry</label>
 
             <textarea 
