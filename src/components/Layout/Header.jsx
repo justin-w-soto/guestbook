@@ -7,7 +7,7 @@ export const Header = () => {
     return (
         <header className='header'
         style={{ 
-          background: 'navy', 
+          background: 'tomato', 
           color: 'white', 
           padding: '1rem', 
           fontFamily:'sans-serif',
