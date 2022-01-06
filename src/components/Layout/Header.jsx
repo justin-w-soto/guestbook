@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { useMyHook } from '../../context/UserContext'
+import { useUser } from '../../context/UserContext'
 
 export const Header = () => {
-    const { user } = useMyHook()
+    const { user } = useUser()
     return (
         <header className='header'
         style={{ 
-          background: '#091620', 
+          background: 'navy', 
           color: 'white', 
           padding: '1rem', 
           fontFamily:'sans-serif',
@@ -18,7 +18,7 @@ export const Header = () => {
           Signing Guestbook as {user}
         </p>
       ) : (
-        <p style={{ fontSize: '4rem'}}>Sign In Friend!</p>
+        <p style={{ fontSize: '2rem'}}>Sign In Friend!</p>
       )}
         </header>
     )

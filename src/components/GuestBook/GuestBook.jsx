@@ -1,13 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEntries } from '../../context/EntryContext'
-import { useMyHook } from '../../context/UserContext'
+import { useUser } from '../../context/UserContext'
 
 export const GuestBook = () => {
 const [name, setName] = useState('')
 const [guestEntry, setGuestEntry] = useState('')
 const { entries, setEntries } = useEntries()
-const { user, setUser } = useMyHook('user')
+const { user, setUser } = useUser('user')
 
 
 const handleSubmit = (e) => {

@@ -1,13 +1,12 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import { Redirect } from 'react-router-dom'
-import { useMyHook } from '../../context/UserContext'
+import { useUser } from '../../context/UserContext'
 
 export const PrivateRoute = ({ children, ...rest }) => {
-    const { user } = useMyHook();
+    const { user } = useUser();
     return (
         <>
-        <h1>This is private time shhhhh!</h1> 
         <Route {...rest} render={( privateRouteProps ) => 
             user ? children : <Redirect to={{pathname:'/login', 
             state: { from: privateRouteProps.location } }} /> } />
