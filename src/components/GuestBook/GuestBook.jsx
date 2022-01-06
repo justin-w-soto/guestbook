@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { useEntries } from '../../context/EntryContext'
 import { useUser } from '../../context/UserContext'
 
@@ -7,8 +8,8 @@ export const GuestBook = () => {
 const [name, setName] = useState('')
 const [guestEntry, setGuestEntry] = useState('')
 const { entries, setEntries } = useEntries()
-const { user, setUser } = useUser('user')
-
+const { user } = useUser('user')
+const history = useHistory()
 
 const handleSubmit = (e) => {
     e.preventDefault()
@@ -17,9 +18,14 @@ const handleSubmit = (e) => {
 
 const updateName = () => {
   if (!guestEntry) return 
-  setUser(name), setEntries([...entries, {  name, message: guestEntry }]), setGuestEntry('')
+   setEntries([...entries, {  name, message: guestEntry }]), setGuestEntry('')
 }  
 
+const redirectLogin = () => {
+  let path = '/login';
+  history.replace(path);
+
+}
 
 const msg = user ? `Thanks for the note ${user}.` : 'Sign the Book!'
 
@@ -42,7 +48,7 @@ const msg = user ? `Thanks for the note ${user}.` : 'Sign the Book!'
             {user && (
             <button 
               type="button" 
-              onClick={() => { setUser(''), setName('') }}
+              onClick={redirectLogin}
               >Not {user} ?
             </button>
               )}
